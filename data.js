@@ -39,6 +39,27 @@ const data = {
 }
 
 
+const tareas2 = document.getElementById('tareas')
+const completa = document.getElementById('tareascumplida')
+const mymap = new Map(Object.entries(data))
+2
+
+
+// console.log(mymap)
+for (const [k, v] of mymap) {
+    console.log(`${k}-->${v}`)
+    const tareas = new Map(Object.entries(v))
+
+    tareas.forEach(element => {
+        tareas2.append(new Option(element.task))
+    })
+
+    const prueba = tareas.filter(tare => tare.state==false)
+
+    prueba.forEach(tare => {
+        completa.append(new Option(tare.task))
+    })
+}
 
 
 
